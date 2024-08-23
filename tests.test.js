@@ -71,3 +71,29 @@ test('Casesar Cipher Case Sensitive', () => {
 test('Casesar Cipher Punctuation', () => {
   expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
 })
+
+test('analyzeArray', () => {
+  let testCases = [
+    {
+      input: [1,8,3,4,2,6],
+      output: {
+        average: 4,
+        min: 1,
+        max: 8,
+        length: 6
+     }
+    },
+    {
+      input: [2,5,3,4,7,9],
+      output: {
+        average: 5,
+        min: 2,
+        max: 9,
+        length: 6
+     }
+    },
+  ]
+  testCases.forEach((t) => {
+    expect(analyzeArray(t.input)).toEqual(t.output)
+  });
+});

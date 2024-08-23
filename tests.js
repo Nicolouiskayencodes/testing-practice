@@ -53,5 +53,33 @@ export function caesarCipher(string) {
 }
 
 export function analyzeArray(array) {
-
+  let length = array.length;
+  let sum = 0
+  array.forEach((x)=>{
+    sum +=x;
+  })
+  let average = sum/length;
+  let low = null;
+  for (let i=0; i<length; i++){
+    if (low === null){
+      low = array[i];
+    } else if (array[i]<low){
+      low = array[i];
+    }
+  }
+  let high = null;
+  for (let i=0; i<length; i++){
+    if (high === null){
+      high = array[i];
+    } else if (array[i]>high){
+      high = array[i];
+    }
+  }
+  let obj = {
+    average: average,
+    min: low,
+    max: high,
+    length: length
+  }
+  return obj
 }
